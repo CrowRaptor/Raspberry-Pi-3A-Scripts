@@ -26,6 +26,6 @@ while True:
     pwm.ChangeDutyCycle(neutral)
     sleep(1)
 
-    rint("duty cycle",left, "% at right +90 deg")
+    print("duty cycle",left, "% at right +90 deg")
     pwm.ChangeDutyCycle(left)
     sleep(1)
