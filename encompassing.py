@@ -1,13 +1,16 @@
 import RPi.GPIO as GPIO
 from time import sleep
 
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(servo_pin, GPIO.OUT)
+
+GPIO.setwarnings(False)     #ignore problems
+GPIO.setmode(GPIO.BOARD)       #use physical pin numbering
+GPIO.setup(8, 11, GPIO.OUT, initial=GPIO.LOW)   #set pin 8 as output and set value to off
 
 def movemotor():
     ## add your servo BOARD PIN number ##
     servo_pin = 11
-
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(servo_pin, GPIO.OUT)
 
     pwm=GPIO.PWM(servo_pin, 50)
     pwm.start(0)
@@ -32,17 +35,18 @@ def movemotor():
         pwm.ChangeDutyCycle(left)
         sleep(1)
 
+        print("went through motor func")
+
 
 def blinkLED():
-    GPIO.setwarnings(False)     #ignore problems
-    GPIO.setmode(GPIO.BOARD)       #use physical pin numbering
-    GPIO.setup(8, GPIO.OUT, initial=GPIO.LOW)   #set pin 8 as output and set value to off
 
     while True: #run forever
         GPIO.output(8, GPIO.HIGH)   #turn on
         sleep(1)    #1 second eep
         GPIO.output(8, GPIO.LOW)
         sleep(1)
+        
+        print("went though led func")
 
 movemotor()
 blinkLED()
