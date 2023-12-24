@@ -1,18 +1,18 @@
 import RPi.GPIO as GPIO
 from time import sleep
 
-servo_pin = 11
+pins = (8,11)
 
 GPIO.setmode(GPIO.BOARD)
 
 GPIO.setwarnings(False)     #ignore problems
 GPIO.setmode(GPIO.BOARD)       #use physical pin numbering
-GPIO.setup(8, 11, GPIO.OUT, initial=GPIO.LOW)   #set pin 8 as output and set value to off
+GPIO.setup(pins, GPIO.OUT, initial=GPIO.LOW)   #set pin 8 as output and set value to off
 
 def movemotor():
     ## add your servo BOARD PIN number ##
 
-    pwm=GPIO.PWM(servo_pin, 50)
+    pwm=GPIO.PWM(11, 50)
     pwm.start(0)
 
     ## edit these duty cycle % values ##
