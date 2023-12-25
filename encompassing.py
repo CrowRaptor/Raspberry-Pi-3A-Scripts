@@ -48,8 +48,10 @@ def blinkLED():
         
         print("went though led func")
 
-blinkLED()
-movemotor()
+while True:
+    blinkLED()
+    movemotor()
+    print("done")
 
 
 
