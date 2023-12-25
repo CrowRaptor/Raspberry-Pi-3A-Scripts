@@ -47,11 +47,14 @@ def blinkLED():
         sleep(1)
         
         print("went though led func")
+        
+
 
 while True:
     blinkLED()
     movemotor()
-    print("done")
+    print("e")
+
 
 
 
