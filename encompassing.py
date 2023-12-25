@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 from time import sleep
 
-pins = (8,11)
+pins = (5,11)
 
 GPIO.setmode(GPIO.BOARD)
 
@@ -41,9 +41,9 @@ def movemotor():
 def blinkLED():
 
     while True: #run forever
-        GPIO.output(8, GPIO.HIGH)   #turn on
+        GPIO.output(5, GPIO.HIGH)   #turn on
         sleep(1)    #1 second eep
-        GPIO.output(8, GPIO.LOW)
+        GPIO.output(5, GPIO.LOW)
         sleep(1)
         
         print("went though led func")
