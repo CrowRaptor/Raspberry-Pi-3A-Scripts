@@ -48,8 +48,9 @@ def blinkLED():
         
         print("went though led func")
 
-movemotor()
 blinkLED()
+movemotor()
+
 
 
 
