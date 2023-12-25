@@ -48,12 +48,13 @@ def blinkLED():
         
         print("went though led func")
         
+thread1 = threading.Thread(target=movemotor)
+thread1.start()
+
+thread2 = threading.Thread(target=blinkLED)
+thread2.start()
 
 
-while True:
-    blinkLED()
-    movemotor()
-    print("e")
 
 
 
